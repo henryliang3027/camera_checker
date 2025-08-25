@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // String _platformVersion = 'Unknown';
   bool _isCameraAvailable = false;
-  final _cameraCheckerPlugin = CameraChecker();
+  final cameraChecker = CameraChecker();
 
   @override
   void initState() {
@@ -50,13 +50,15 @@ class _MyAppState extends State<MyApp> {
   // }
 
   Future<void> checkCameraAvailable() async {
-    bool available;
+    bool isAvailable;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      available = await _cameraCheckerPlugin.isCameraAvailable() ?? false;
-    } on PlatformException {
-      available = false;
+      isAvailable = await cameraChecker.isCameraAvailable() ?? false;
+      isAvailable ? print('攝像頭可用') : print('攝像頭不可用');
+    } catch (e) {
+      isAvailable = false;
+      print('檢查攝像頭狀態時發生錯誤: $e');
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -65,7 +67,7 @@ class _MyAppState extends State<MyApp> {
     if (!mounted) return;
 
     setState(() {
-      _isCameraAvailable = available;
+      _isCameraAvailable = isAvailable;
     });
   }
 

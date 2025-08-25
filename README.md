@@ -1,6 +1,6 @@
 # Camera Checker Flutter Plugin
 
-這個套件專為偵測 Windows 平台而設計，使用 C++ 調用 Windows Media Foundation API 來偵測系統中是否有可用的攝像頭設備。
+這個套件專為 Windows 平台而設計，使用 C++ 調用 Windows Media Foundation API 來偵測系統中是否有可用的攝像頭設備。
 
 ## 快速開始
 
@@ -9,20 +9,23 @@
 在您的 Flutter 專案中的 `pubspec.yaml` 檔案中添加：
 
 方法一：使用 Git Repository
+
 ```yaml
-  camera_checker:
-    git:
-      url: https://github.com/your-repo/camera_checker.git # git repository 路徑
-      ref: main
+camera_checker:
+  git:
+    url: https://github.com/your-repo/camera_checker.git # git repository 路徑
+    ref: main
 ```
 
 方法二：使用本地端路徑
+
 ```yaml
-  camera_checker:
-    path: /path/to/camera_checker # 本地端路徑
+camera_checker:
+  path: /path/to/camera_checker # 本地端路徑
 ```
 
 然後執行：
+
 ```bash
 flutter pub get
 ```
@@ -54,7 +57,6 @@ Future<void> checkCamera() async {
 
 完整使用範例請參考：`example/lib/main.dart`
 
-
 ## API 函數說明
 
 ### CameraChecker 類別
@@ -62,6 +64,7 @@ Future<void> checkCamera() async {
 #### 實例方法
 
 **`Future<bool?> isCameraAvailable()`**
+
 - **功能**：檢測 Windows 系統中是否有可用的攝像頭設備
 - **回傳**：
   - `true` - 系統中有可用的攝像頭設備
@@ -70,10 +73,5 @@ Future<void> checkCamera() async {
 ## 平台支援
 
 目前僅支援 Windows 平台：
+
 - **Windows 7** 及以上版本，內建 **Windows Media Foundation** 函式庫
-
-
-
-
-
-

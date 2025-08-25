@@ -23,7 +23,7 @@ abstract class CameraCheckerPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<bool?> isCameraAvailable() async {
+  Future<bool> isCameraAvailable() async {
     throw UnimplementedError('isCameraAvailable() has not been implemented.');
   }
 }

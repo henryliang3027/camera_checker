@@ -10,9 +10,9 @@ class MethodChannelCameraChecker extends CameraCheckerPlatform {
   final methodChannel = const MethodChannel('camera_checker');
 
   @override
-  Future<bool?> isCameraAvailable() async {
-    final bool? available =
-        await methodChannel.invokeMethod<bool>('isCameraAvailable');
+  Future<bool> isCameraAvailable() async {
+    final bool available =
+        await methodChannel.invokeMethod<bool>('isCameraAvailable') ?? false;
     return available;
   }
 }
