@@ -74,4 +74,4 @@ Future<void> checkCamera() async {
 
 目前僅支援 Windows 平台：
 
-- **Windows 7** 及以上版本，內建 **Windows Media Foundation** 函式庫
+- **Windows 10** 及以上版本，內建 **Windows Media Foundation** 函式庫
